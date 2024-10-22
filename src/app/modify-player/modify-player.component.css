@@ -1,0 +1,134 @@
+.outer-container {
+  display: flex;
+  height: 305px;
+  width: 755px;
+  border: 2px solid #3e31fa;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.player-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:15px;
+  border-right: 1px solid lightgrey;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.actions {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-info {
+  display: flex;
+  gap: 10px;
+}
+
+.team-info input {
+  color: #3e31fa;
+  border-color: #3e31fa;
+  text-align: center;
+}
+
+.player-number {
+  width: 75px;
+  text-align: center;
+}
+
+.birth-date,
+.join-date,
+.release-date {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-info {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.date-info input {
+  text-align: center;
+}
+
+input[type="date"] {
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+.status-info {
+  display: flex;
+  gap: 20px;
+}
+
+.player-name {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.player-name input {
+  color: #3e31fa;
+  border-color: #3e31fa;
+  text-align: center;
+}
+.image-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 625px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTONS */
+
+.cancel-outline-btn {
+  background-color: #3e31fa;
+  color: white;
+}
+
+.cancel-outline-btn:hover {
+  border-color: white;
+}
+
+.update-outline-btn {
+  border-color: lightgrey;
+  color: #3e31fa;
+}
+
+.update-outline-btn:hover {
+  border-color: #3e31fa;
+  background-color: white;
+}
+
+.delete-outline-btn {
+  border-color: red;
+  color: red;
+}
+
+.delete-outline-btn:hover {
+  border-color: white;
+  background-color: red;
+  color: white;
+}

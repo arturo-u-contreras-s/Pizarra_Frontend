@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 7px 20px;
+}
+
+label {
+  color: #8760F6;
+  font-weight: bolder;
+}
+
+.formation-selector,
+.squad-name {
+  display: flex;
+  align-items: center;
+}
+
+.squad-name input {
+  width: 275px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.save-outline-btn {
+  background-color: #3e31fa;
+  color: white;
+}
+
+.save-outline-btn:hover {
+  border-color: white;
+}
+
+.cancel-button {
+  margin-left: 10px;
+}
+
+.cancel-outline-btn {
+  border-color: lightgrey;
+  color: #3e31fa;
+}
+
+.cancel-outline-btn:hover {
+  border-color: #3e31fa;
+  background-color: white;
+}

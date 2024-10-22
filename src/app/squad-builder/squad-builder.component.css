@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.squad-builder {
+  display: flex;
+}
+
+.player-exchange {
+  display: flex;
+}
+
+squad-formation-comp {
+  margin-left: 70px;
+}

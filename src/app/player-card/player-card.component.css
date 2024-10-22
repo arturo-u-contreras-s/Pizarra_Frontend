@@ -1,0 +1,60 @@
+.card-container {
+  height: 305px;
+  width: 230px;
+  border: 2px solid #3e31fa;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card-container:hover {
+  border: 3px solid black;
+}
+
+.card-container:hover img {
+  transform: scale(1.03);
+}
+
+img {
+  height: 297px;
+  width: 221px;
+  border-radius: 7px;
+  transition: transform 0.3s ease;
+}
+.player-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+}
+.player-info {
+  background-color: lightgray;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  margin-top: 215px;
+  color: black;
+  font-weight: bolder;
+  width: 210px;
+  height: 60px;
+}
+
+.player-number {
+  font-size: 56px;
+  margin-right: 15px;
+  margin-left: 40px;
+}
+
+.player-text {
+  margin-top: 15px;
+}
+
+.player-name {
+  font-size: 24px;
+  color: #2115AB;
+}
+
+.player-position {
+  font-size: 18px;
+}

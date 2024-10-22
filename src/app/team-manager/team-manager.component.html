@@ -1,0 +1,21 @@
+<div class="outer-container">
+  <div class="header">
+    TEAMS
+  </div>
+  <div class="add-team-directive" (click)="addTeamClick()">
+    <div>
+      + ADD TEAM
+    </div>
+    <div class="add-img">
+      <img [src]="teamImg" alt="Add Squad">
+    </div>
+  </div>
+  <div class="team-listings" *ngFor="let team of allTeams">
+    <div class="team">
+      <modify-team-comp [createTeam]="false" [team]="team"></modify-team-comp>
+    </div>
+  </div>
+  <div class="add-team" *ngIf="addTeam">
+    <modify-team-comp [createTeam]="true"></modify-team-comp>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.filter-directive {
+  margin-left: 900px;
+  color: #8760F6;
+  font-weight: bolder;
+}
+
+.filter-directive:hover {
+  cursor: pointer;
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.outer-container {
+  width: 1040px;
+  height: 100vh;
+  border-left: 3px solid black;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+h4 {
+  color: #14142B;
+  font-size: 32px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.goalkeeper-list, .defender-list, .midfielder-list, .forward-list {
+  display: flex;
+  gap: 20px;
+}

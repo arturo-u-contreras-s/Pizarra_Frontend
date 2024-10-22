@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 20px;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+
+a {
+  color: #43526E;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+  color: #8760F6;
+}
+
+.club-image {
+  border-right: 1px solid lightgray;
+}
+.club-image:hover {
+  cursor: pointer;
+}
+
+.club-champions {
+  padding-left: 10px;
+}
+
+.club-champions img {
+  width: 35px;
+  height: auto;
+}
+
+img {
+  width: 50px;
+  height: auto;
+}
+
+.nav-container {
+  margin-left: auto;
+}
+
+.horizontal-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.horizontal-nav li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.horizontal-nav li:last-child {
+  margin-right: 0;
+}
+
+.horizontal-nav li a {
+  text-decoration: none;
+}

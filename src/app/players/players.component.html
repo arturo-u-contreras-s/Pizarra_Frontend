@@ -1,0 +1,70 @@
+<div class="outer-container">
+  <div class="header">
+    PLAYERS
+  </div>
+  <div class="filter-bar">
+    <div class="add-player-directive" (click)="addPlayerClick()">
+      <div>
+        + ADD PLAYER
+      </div>
+      <div class="add-img">
+        <img [src]="playerImg" alt="Add Player">
+      </div>
+    </div>
+    <div class="filters">
+      <filter-players-nav [playerLibrary]="true"></filter-players-nav>
+    </div>
+  </div>
+
+  <div class="add-player-entry" *ngIf="addPlayer">
+    <div class="player-entry">
+      <player-entry-comp [createPlayer]="true" [currentPlayer]="null"></player-entry-comp>
+    </div>
+  </div>
+
+  <div class="players">
+    <div class="goalkeeper-section" *ngIf="goalkeepers.length > 0 && (positionFilter === 'All' || positionFilter === 'Goalkeepers')">
+      <h4 class="goalkeeper-text">
+        Goalkeepers
+      </h4>
+      <div class="goalkeeper-list">
+        <div class="player-list" *ngFor="let player of goalkeepers">
+          <player-entry-comp [createPlayer]="false" [currentPlayer]="player"></player-entry-comp>
+        </div>
+      </div>
+    </div>
+
+    <div class="defender-section" *ngIf="defenders.length > 0 && (positionFilter === 'All' || positionFilter === 'Defenders')">
+      <h4 class="defender-text">
+        Defenders
+      </h4>
+      <div class="defender-list">
+        <div class="player-list" *ngFor="let player of defenders">
+          <player-entry-comp [createPlayer]="false" [currentPlayer]="player"></player-entry-comp>
+        </div>
+      </div>
+    </div>
+
+    <div class="midfielder-section" *ngIf="midfielders.length > 0 && (positionFilter === 'All' || positionFilter === 'Midfielders')">
+      <h4 class="midfielder-text">
+        Midfielders
+      </h4>
+      <div class="midfielder-list">
+        <div class="player-list" *ngFor="let player of midfielders">
+          <player-entry-comp [createPlayer]="false" [currentPlayer]="player"></player-entry-comp>
+        </div>
+      </div>
+    </div>
+    
+    <div class="forward-section" *ngIf="forwards.length > 0 && (positionFilter === 'All' || positionFilter === 'Forwards')">
+      <h4 class="forward-text">
+        Forwards
+      </h4>
+      <div class="forward-list">
+        <div class="player-list" *ngFor="let player of forwards">
+          <player-entry-comp [createPlayer]="false" [currentPlayer]="player"></player-entry-comp>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

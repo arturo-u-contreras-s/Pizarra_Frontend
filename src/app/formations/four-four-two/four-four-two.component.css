@@ -1,0 +1,50 @@
+.div-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 850px;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.forwards-container,
+.midfielder-container,
+.defender-container,
+.goalkeeper-container {
+  display: flex;
+  gap: 10px;
+  position: center;
+  height: 140px;
+  padding-top: 10px;
+}
+
+.forwards-container > *,
+.midfielder-container > *,
+.defender-container > *,
+.goalkeeper-container > * {
+  flex: 1;
+  min-width: 0
+}
+
+.position-10 {
+  margin-right: 75px;
+}
+
+.position-9 {
+  margin-left: 75px;
+}
+
+.position-1,
+.position-5 {
+  margin-left: 100px;
+  margin-right: 30px;
+}
+
+.position-2,
+.position-6 {
+  margin-left: 30px;
+  margin-right: 100px;
+}

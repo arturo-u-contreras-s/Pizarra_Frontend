@@ -1,0 +1,5 @@
+<div class="team-selector">
+  <select class="form-control selector" [(ngModel)]="selectedTeam" (ngModelChange)="onTeamChange()" name="selectedTeam">
+    <option *ngFor="let team of allTeams" [ngValue]="team">{{ team.teamName }}</option>
+  </select>
+</div>

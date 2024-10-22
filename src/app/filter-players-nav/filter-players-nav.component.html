@@ -1,0 +1,24 @@
+<div class="player-filters">
+  <div class="status-selector">
+    <label class="form-check-label" for="status-selector">STATUS:</label>
+    <select class="form-control selector" [(ngModel)]="statusFilter" (ngModelChange)="onStatusChange()" id="status-selector">
+      <option value="Active">Active</option>
+      <option value="Inactive">Inactive</option>
+      <option value="Legend">Legend</option>
+    </select>
+  </div>
+  <div class="team-selector">
+    <label class="form-check-label" for="teamSelector">TEAM:</label>
+    <team-selector-comp (teamChanged)="handleTeamChange($event)" id="teamSelector"></team-selector-comp>
+  </div>
+  <div class="position-selector">
+    <label class="form-check-label" for="positionSelector">POSITION:</label>
+    <select class="form-control selector" [(ngModel)]="positionFilter" (ngModelChange)="onPositionChange($event)" id="positionSelector">
+      <option value="All">All</option>
+      <option value="Goalkeepers">Goalkeepers</option>
+      <option value="Defenders">Defenders</option>
+      <option value="Midfielders">Midfielders</option>
+      <option value="Forwards">Forwards</option>
+    </select>
+  </div>
+</div>

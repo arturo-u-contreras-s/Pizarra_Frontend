@@ -1,0 +1,11 @@
+<div class="outer-container">
+  <div *ngIf="selectedFormation; else elseBlock">
+    <dynamic-component-loader></dynamic-component-loader>
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="instructions">
+      Select a Formation
+    </div>
+  </ng-template>
+</div>

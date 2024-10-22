@@ -1,0 +1,12 @@
+.outer-container {
+  width: 850px;
+  height: 700px;
+  margin-right: 60px;
+}
+
+.instructions {
+  color: #3e31fa;
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+}

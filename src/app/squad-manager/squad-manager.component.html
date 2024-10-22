@@ -1,0 +1,34 @@
+<div class="outer-container">
+  <div class="header">
+    SQUADS
+  </div>
+  <div class="add-squad-directive" (click)="addSquadClick()">
+    <div>
+      + ADD SQUAD
+    </div>
+    <div class="add-img">
+      <img [src]="squadImg" alt="Add Squad">
+    </div>
+  </div>
+  <div class="squad-listings" *ngFor="let squad of allSquads">
+    <div class="squad-listing">
+      <div class="squad-date">
+        <input type="text" class="squad-date" disabled="true" [(ngModel)]="squad.lastUpDate">
+      </div>
+      <input type="text" class="squad-name" disabled="true" [(ngModel)]="squad.squadName">
+      <div class="listing-actions">
+        <button type="button" class="btn btn-outline-primary update-outline-btn" (click)="onUpdate(squad)">Update</button>
+        <button type="button" class="btn btn-outline-primary delete-outline-btn" (click)="onDelete(squad)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="add-squad" *ngIf="addSquad">
+    <div class="squad-info">
+      <input type="text" class="squad-name" placeholder="Squad Name" [(ngModel)]="squadName">
+    </div>
+    <div class="action-buttons">
+      <button type="button" class="btn btn-outline-primary create-outline-btn" (click)="onCreate()">Create</button>
+      <button type="button" class="btn btn-outline-primary cancel-outline-btn" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="main-container">
+  <div class="squad-view" *ngIf="showSquad; else elseBlock">
+    <div class="squad-nav">
+      <squad-nav-comp></squad-nav-comp>
+    </div>
+    <div class="squad-builder">
+      <squad-formation-comp></squad-formation-comp>
+      <subs-reserves-comp></subs-reserves-comp>
+    </div>
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="player-exchange">
+      <position-swap-comp></position-swap-comp>
+      <available-players-comp></available-players-comp>
+    </div>
+  </ng-template>
+</div>

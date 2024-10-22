@@ -1,0 +1,77 @@
+<div class="outer-container">
+  <div class="player-info">
+    <div class="player-name">
+      <div class="first-name">
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" [(ngModel)]="currentPlayer.firstName" name="firstNameInput">
+      </div>
+      <div class="last-name">
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" [(ngModel)]="currentPlayer.lastName" name="lastNameInput">
+      </div>
+      <div class="preferred-name">
+        <input type="text" class="form-control" id="preferredName" placeholder="Display Name" [(ngModel)]="currentPlayer.preferredName" name="preferredNameInput">
+      </div>
+    </div>
+
+    <div class="date-info">
+      <div class="birth-date">
+        <label for="birthDate">Birth Date:</label>
+        <input type="date" [(ngModel)]="currentPlayer.birthDate" name="birthDate">
+      </div>
+      <div class="join-date">
+        <label for="joinDate">Date Acquired:</label>
+        <input type="date" [(ngModel)]="currentPlayer.joinDate" name="joinDate">
+      </div>
+      <div class="release-date">
+        <label for="releaseDate">Release Date:</label>
+        <input type="date" [(ngModel)]="currentPlayer.releaseDate" name="releaseDate">
+      </div>
+    </div>
+
+    <div class="team-info">
+      <div class="team-selector">
+        <team-selector-comp [player]="currentPlayer" (teamChanged)="handleTeamChange($event)"></team-selector-comp>
+      </div>
+      <div class="player-number">
+        <input type="text" class="form-control" id="number" placeholder="Kit #" [(ngModel)]="currentPlayer.kitNumber" name="kitNumberInput">
+      </div>
+      <div class="position-selector">
+        <position-selector-comp (positionChanged)="handlePositionChange($event)" [position]="currentPlayer.position"></position-selector-comp>
+      </div>
+    </div>
+
+    <div class="status-info">
+      <div class="legend-selector">
+        <input class="form-check-input" type="checkbox" id="legendCheckbox" [(ngModel)]="currentPlayer.legend" name="legend">
+        <label class="form-check-label" for="legendCheckbox">Legend</label>
+      </div>
+      <div class="active-selector">
+        <input class="form-check-input" type="checkbox" id="activeCheckbox" [(ngModel)]="currentPlayer.active" name="active">
+        <label class="form-check-label" for="activeCheckbox">Active</label>
+      </div>
+    </div>
+
+    <div class="image-selector">
+      <form>
+        <div class="form-group">
+          <label for="image">Choose player image:</label>
+          <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="update-button" *ngIf="createPlayer == false">
+      <button type="button" class="btn btn-outline-primary update-outline-btn" (click)="onSubmit()">Update</button>
+    </div>
+    <div class="update-button" *ngIf="createPlayer">
+      <button type="button" class="btn btn-outline-primary update-outline-btn" (click)="onSubmit()">Create</button>
+    </div>
+    <div class="cancel-button">
+      <button type="button" class="btn btn-outline-primary cancel-outline-btn" (click)="onCancel()">Cancel</button>
+    </div>
+    <div class="delete-player" *ngIf="createPlayer == false">
+      <button type="button" class="btn btn-outline-primary delete-outline-btn" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+</div>

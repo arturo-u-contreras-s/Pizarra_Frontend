@@ -1,0 +1,8 @@
+<div class="outer-container">
+  <div class="player-card" (click)="toggleModifyView()">
+    <player-card-comp></player-card-comp>
+  </div>
+  <div class="modify-player" *ngIf = "modifyView">
+    <modify-player-comp [createPlayer]="createPlayer"></modify-player-comp>
+  </div>
+</div>

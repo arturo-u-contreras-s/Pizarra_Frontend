@@ -1,0 +1,38 @@
+<div class="outer-container">
+  <div class="team-info">
+    <div class="team-name">
+      <input type="text" [disabled]="isDisabled" class="form-control" id="teamName" placeholder="Team Name" [(ngModel)]="teamName" name="teamNameInput">
+    </div>
+    <div class="head-coach">
+      <input type="text" [disabled]="isDisabled" class="form-control" id="headCoach" placeholder="Head Coach Name" [(ngModel)]="headCoach" name="headCoachInput">
+    </div>
+  </div>
+  <div class="team-actions">
+    <div class="modify-set" *ngIf="createTeam; else elseBlock">
+      <div class="update-button">
+        <button type="button" class="btn btn-outline-primary update-outline-btn" (click)="onSubmit()">Create</button>
+      </div>
+      <div class="cancel-button">
+        <button type="button" class="btn btn-outline-primary cancel-outline-btn" (click)="onCancel()">Cancel</button>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <div class="modify-set" *ngIf="modify; else elseBlock">
+        <div class="update-button">
+          <button type="button" class="btn btn-outline-primary update-outline-btn" (click)="onSubmit()">Update</button>
+        </div>
+        <div class="cancel-button">
+          <button type="button" class="btn btn-outline-primary cancel-outline-btn" (click)="onCancel()">Cancel</button>
+        </div>
+        <div class="delete-team">
+          <button type="button" class="btn btn-outline-primary delete-outline-btn" (click)="onDelete()">Delete</button>
+        </div>
+      </div>
+      <ng-template #elseBlock>
+        <div class="first-set">
+          <button type="button" class="btn btn-outline-primary cancel-outline-btn" (click)="modifyTeamClick(team)">Edit/Delete</button>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>

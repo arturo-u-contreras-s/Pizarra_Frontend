@@ -1,0 +1,65 @@
+.outer-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.header {
+  font-size: 40px;
+  color:#3e31fa;
+  font-weight: bolder;
+  text-align: center;
+  width: 100%;
+}
+
+.filter-bar {
+  display: flex;
+}
+
+.add-player-directive {
+  color: #8760F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px;
+  height: 80px;
+}
+
+.add-player-directive:hover {
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.add-player-directive:hover img {
+  transform: scale(1.20);
+}
+
+img {
+  width: 45px;
+  border-radius: 7px;
+  transition: transform 0.3s ease;
+}
+
+.filters {
+  margin-left: 35%;
+}
+
+.add-player-entry {
+  margin-top: 50px;
+}
+
+.player-entry {
+  margin-left: 14%;
+}
+
+h4 {
+  color: #14142B;
+  font-size: 32px;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  margin-left: 50px;
+}
+
+.goalkeeper-list, .defender-list, .midfielder-list, .forward-list {
+  display: flex;
+}

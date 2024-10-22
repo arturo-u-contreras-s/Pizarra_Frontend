@@ -1,0 +1,31 @@
+.card-container {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90px;
+  height: 120px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card-container:hover {
+  border: 3px solid #3e31fa;
+}
+
+.card-container:hover img {
+  transform: scale(1.5);
+}
+
+img {
+  margin-top: 15px;
+  max-height: 75px;
+  transition: transform 0.3s ease;
+}
+
+.player-name {
+  font-size: 13px;
+  font-weight: bold;
+}

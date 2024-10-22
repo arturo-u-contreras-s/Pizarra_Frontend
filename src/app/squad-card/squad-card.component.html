@@ -1,0 +1,28 @@
+<div class="outer-container" (mouseenter)="hovering = true" (mouseleave)="hovering = false">
+  <div class="swap-library" *ngIf="hovering">
+    <img src="assets/ui-images/sb-swap-player.png" alt="Swap Player" id="swapImage" (click)="onSwapClicked()">
+  </div>
+
+  <div class="card-container" [ngClass]="{'selected': selectedPosition === squadPosition}" (click)="onCardClicked()">
+    <div class="player-image">
+      <img [src]="currentPlayer.image" alt="Player Image" id="playerImage">
+    </div>
+  
+    <div class="player-name" *ngIf="!hovering">
+      {{ currentPlayer.preferredName }}
+    </div>
+  
+    <div class="info-container" *ngIf="hovering">
+      <div class="player-number">
+        {{ currentPlayer.kitNumber }}
+      </div>
+      <div class="player-position">
+        {{ currentPlayerPosition }}
+      </div>
+    </div>
+  </div>
+
+  <div class="remove-player" *ngIf="hovering && currentPlayer.playerId != null">
+    <img src="assets/ui-images/sb-remove-player.webp" alt="Remove Player" id="removeImage" (click)="onRemoveClicked()">
+  </div>
+</div>

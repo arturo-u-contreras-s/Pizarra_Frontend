@@ -1,0 +1,11 @@
+<div class="outer-container" (mouseenter)="hovering = true" (mouseleave)="hovering = false">
+  <div class="card-container" (click)="handleCardClicked()">
+    <div class="player-image">
+      <img [src]="currentPlayer.image" alt="Player Image">
+    </div>
+  
+    <div class="player-name" *ngIf="!hovering">
+      {{ currentPlayer.preferredName }}
+    </div>
+  </div>
+</div>

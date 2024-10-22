@@ -1,0 +1,76 @@
+.outer-container {
+  display: flex;
+  height: 50px;
+  width: 700px;
+  background-color: white;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:15px;
+  border-right: 1px solid #3e31fa;
+  margin-right: 10px;
+  padding: 10px;
+  width: 440px;
+}
+
+.team-info input {
+  color: #3e31fa;
+  border-color: #3e31fa;
+  text-align: center;
+}
+
+.team-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-set {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modify-set {
+  margin-left: 10px;
+  display: flex;
+  gap:20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-outline-btn {
+  background-color: #3e31fa;
+  color: white;
+}
+
+.cancel-outline-btn:hover {
+  border-color: white;
+}
+
+.update-outline-btn {
+  border-color: lightgrey;
+  color: #3e31fa;
+}
+
+.update-outline-btn:hover {
+  border-color: #3e31fa;
+  background-color: white;
+}
+
+.delete-outline-btn {
+  border-color: red;
+  color: red;
+}
+
+.delete-outline-btn:hover {
+  border-color: white;
+  background-color: red;
+  color: white;
+}

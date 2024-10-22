@@ -1,0 +1,150 @@
+.outer-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.header {
+  font-size: 40px;
+  color:#3e31fa;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.add-squad-directive {
+  color: #8760F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px;
+  height: 80px;
+  margin-right: 90%;
+}
+
+.add-squad-directive:hover {
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.add-squad-directive:hover img {
+  transform: scale(1.20);
+}
+
+img {
+  width: 45px;
+  border-radius: 7px;
+  transition: transform 0.3s ease;
+}
+
+.squad-listings {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.squad-listing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.squad-date {
+  width: 120px;
+}
+
+.squad-name {
+  width: 250px;
+}
+.squad-listing input {
+  color: #3e31fa;
+  border: 1px solid #3e31fa;
+  text-align: center;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.listing-actions {
+  margin-left: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.update-outline-btn {
+  border-color: lightgrey;
+  color: #3e31fa;
+}
+
+.update-outline-btn:hover {
+  border-color: #3e31fa;
+  background-color: white;
+}
+
+.delete-outline-btn {
+  border-color: red;
+  color: red;
+}
+
+.delete-outline-btn:hover {
+  border-color: white;
+  background-color: red;
+  color: white;
+}
+
+.add-squad {
+  border-top: 3px solid #3e31fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.add-squad-directive {
+  margin-bottom: 20px;
+}
+
+.add-squad-directive:hover {
+  cursor: pointer;
+}
+
+.squad-info {
+  padding-right: 50px;
+  border-right: 1px solid #3e31fa;
+}
+
+.squad-info input{
+  color: #3e31fa;
+  border: 1px solid #3e31fa;
+  text-align: center;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.action-buttons {
+  margin-left: 50px;
+  display: flex;
+  gap: 30px;
+}
+
+.create-outline-btn {
+  border-color: lightgrey;
+  color: #3e31fa;
+}
+
+.create-outline-btn:hover {
+  border-color: #3e31fa;
+  background-color: white;
+}
+
+.cancel-outline-btn {
+  background-color: #3e31fa;
+  color: white;
+}
+
+.cancel-outline-btn:hover {
+  border-color: white;
+}
