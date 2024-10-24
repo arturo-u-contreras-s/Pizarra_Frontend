@@ -1,5 +1,7 @@
 # Pizarraapp
 
+Check out a brief overview of [Pizarra](https://youtu.be/Z9OhRB6EgVA) on YouTube!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
 ## Development server
