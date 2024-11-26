@@ -3,6 +3,7 @@ DISPLAY ALL SQUADS.
 CREATE A NEW SQUAD.
 UPDATE OR DELETE AN EXISTING SQUAD. UPDATE TAKES YOU TO THE SQUAD BUILDER.
 */
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -46,6 +47,18 @@ export class SquadManagerComponent {
     this.toggleAddSquad();
   }
 
+  onCopy(squad: Squad) {
+    this.getCurrentDateTime();
+    const newSquad: Squad = {
+      squadId: null,
+      formation: squad.formation,
+      squadName: squad.squadName + " COPY",
+      lastUpDate: this.lastUpDate
+    }
+
+    this.squadCrudService.copySquad(squad, newSquad);
+  }
+
   onUpdate(squad: Squad) {
     this.squadCrudService.activeSquadSetter = squad;
     this.formationDataService.selectedFormationSetter = squad.formation;
@@ -56,7 +69,7 @@ export class SquadManagerComponent {
   }
 
   onDelete(squad: Squad) {
-    this.playerPositionCrudService.deleteEntireSquad(squad);
+    this.squadCrudService.deleteSquad(squad);
   }
 
   onCreate() {

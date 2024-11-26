@@ -7,14 +7,12 @@ import { Squad } from '../model/squad';
 import { Player } from '../model/player';
 import { PlayerPosition } from '../model/player_position';
 
-import { SquadCrudService } from '../Services/squad-crud.service';
-
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerPositionCrudService {
 
-  constructor(private http: HttpClient, private squadCrudService: SquadCrudService) {}
+  constructor(private http: HttpClient) {}
 
   private squadPositions: BehaviorSubject<PlayerPosition[] | null> = new BehaviorSubject<PlayerPosition[] | null>(null); // player positions associated with the selected squad
 
@@ -77,30 +75,49 @@ export class PlayerPositionCrudService {
     });
   }
 
-  deletePlayerPositions(squadId : number) {
-    this.http.delete(this.baseUrl + '/squad/' + squadId).pipe(
-      catchError(this.handleError('Delete Player Positions')))
-    .subscribe(() => {
+  copySquad(currentSquad : Squad, newSquad : Squad) {
+    this.http.get(this.baseUrl + '/' + currentSquad.squadId)
+    .pipe(
+      map(resp => {
+        const players = [];
+        for (const key in resp) {
+          if (resp.hasOwnProperty(key)) {
+            players.push({ ...resp[key] });
+          }
+        }
+        return players;
+      })
+    )
+    .subscribe(players => {
+      for (let i = 0; i < players.length; i++) {
+        if (players[i] != null) {
+          this.createPlayerPosition({playerPositionId: null, playerId: players[i].playerId, squadPosition: players[i].squadPosition, squad: newSquad});
+        }
+      }
     });
-    console.log("deletePlayerPositions() COMPLETED");
   }
 
-  deletePPByPlayerId(playerId : number) { // delete a player from all squads when the user deletes the player from the database
+  /* delete all players from a squad using the squadId */
+  deletePlayerPositions(squadId: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.http.delete(this.baseUrl + '/squad/' + squadId).pipe(
+        catchError(this.handleError('Delete Player Positions'))
+      ).subscribe(() => {
+        console.log("deletePlayerPositions() COMPLETED");
+        resolve();
+      }, error => {
+        reject(error);
+      });
+    });
+  }
+
+  /* delete a player from all squads using their id. Use case: when the user deletes the player from the database */
+  deletePPByPlayerId(playerId : number) {
     this.http.delete(this.baseUrl + '/player/' + playerId).pipe(
       catchError(this.handleError('Delete Player Position by Player ID')))
     .subscribe(() => {
     });
     console.log("deletePPByPlayerId() COMPLETED");
-  }
-
-  // delete squad positions and then the squad itself
-  deleteEntireSquad(squad : Squad) {
-    this.http.delete(this.baseUrl + '/squad/' + squad.squadId).pipe(
-      catchError(this.handleError('Delete Entire Squad')))
-    .subscribe(() => {
-      this.squadCrudService.deleteSquad(squad); // delete squad
-    });
-    console.log("deletePlayerPositions() COMPLETED");
   }
 
   private handleError(operation: string) {
