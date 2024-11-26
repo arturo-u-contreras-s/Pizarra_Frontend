@@ -17,6 +17,7 @@
       </div>
       <input type="text" class="squad-name" disabled="true" [(ngModel)]="squad.squadName">
       <div class="listing-actions">
+        <button type="button" class="btn btn-outline-primary update-outline-btn" (click)="onCopy(squad)">Copy</button>
         <button type="button" class="btn btn-outline-primary update-outline-btn" (click)="onUpdate(squad)">Update</button>
         <button type="button" class="btn btn-outline-primary delete-outline-btn" (click)="onDelete(squad)">Delete</button>
       </div>
