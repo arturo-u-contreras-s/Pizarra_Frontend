@@ -24,7 +24,7 @@ export class SquadFormationComponent {
     );
   }
 
-  selectedFormation: string = "";
+  selectedFormation: string | null = null;
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

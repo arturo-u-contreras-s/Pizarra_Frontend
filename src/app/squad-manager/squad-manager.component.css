@@ -148,3 +148,21 @@ img {
 .cancel-outline-btn:hover {
   border-color: white;
 }
+
+label {
+  color: #8760F6;
+  font-weight: bolder;
+}
+
+.formation-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  border-color: #3e31fa;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
