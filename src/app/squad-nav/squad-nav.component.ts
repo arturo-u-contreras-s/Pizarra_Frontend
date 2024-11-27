@@ -31,7 +31,7 @@ export class SquadNavComponent {
     }));
   }
 
-  selectedFormation: string = "";
+  selectedFormation: string | null = null;
   selectedSquad: Squad;
 
   onSelectComponent() {

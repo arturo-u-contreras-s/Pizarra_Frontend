@@ -25,10 +25,18 @@
   </div>
   <div class="add-squad" *ngIf="addSquad">
     <div class="squad-info">
-      <input type="text" class="squad-name" placeholder="Squad Name" [(ngModel)]="squadName">
+      <input type="text" class="squad-name" placeholder="Squad Name" [(ngModel)]="squadName" (ngModelChange)="onSquadNameChange($event)">
     </div>
     <div class="action-buttons">
-      <button type="button" class="btn btn-outline-primary create-outline-btn" (click)="onCreate()">Create</button>
+      <div class="formation-selector">
+        <label id="formationLabel" for="formationSelect">FORMATION: </label>
+        <select id="formationSelect" [(ngModel)]="selectedFormation">
+          <option value="four-three-three-comp">4-3-3</option>
+          <option value="four-four-two-comp">4-4-2</option>
+          <option value="five-three-two">5-3-2</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-outline-primary create-outline-btn" (click)="onCreate()" [disabled]="!isNameEntered">Create</button>
       <button type="button" class="btn btn-outline-primary cancel-outline-btn" (click)="onCancel()">Cancel</button>
     </div>
   </div>

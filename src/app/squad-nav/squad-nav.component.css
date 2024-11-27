@@ -17,6 +17,13 @@ label {
   align-items: center;
 }
 
+select {
+  border-color: #3e31fa;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
 .squad-name input {
   width: 275px;
   margin-left: 10px;

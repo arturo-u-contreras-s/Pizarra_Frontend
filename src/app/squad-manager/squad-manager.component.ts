@@ -32,15 +32,27 @@ export class SquadManagerComponent {
 
   addSquad: boolean = false;
 
-  newSquad: Squad;
   squadName: string = "";
   lastUpDate: string = "";
+  selectedFormation: string | null = "four-three-three-comp";
 
   allSquads: Squad[];
+
+  isNameEntered: boolean = false;
+
+  onSquadNameChange(newValue: string) {
+    if (this.squadName != "") {
+      this.isNameEntered = true;
+    } else {
+      this.isNameEntered = false;
+    }
+  }
 
   toggleAddSquad() {
     this.squadName = "";
     this.addSquad = !this.addSquad;
+    this.selectedFormation = "four-three-three-comp";
+    this.isNameEntered = false
   }
 
   addSquadClick() {
@@ -69,18 +81,23 @@ export class SquadManagerComponent {
   }
 
   onDelete(squad: Squad) {
+    const isConfirmed = window.confirm('Are you sure you want to delete this item?');
+    if (!isConfirmed) {
+      return;
+    }
     this.squadCrudService.deleteSquad(squad);
   }
 
   onCreate() {
     this.getCurrentDateTime();
-    this.newSquad = {
+    const newSquad = {
       squadId: null,
-      formation: null,
+      formation: this.selectedFormation,
       squadName: this.squadName,
       lastUpDate: this.lastUpDate
     }
-    this.squadCrudService.createSquad(this.newSquad);
+    this.squadCrudService.createSquad(newSquad);
+    this.formationDataService.selectedFormationSetter = newSquad.formation;
     this.toggleAddSquad();
     this.router.navigate(['squad-builder']);
   }
