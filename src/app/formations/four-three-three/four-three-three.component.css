@@ -53,3 +53,9 @@
   margin-left: 130px;
   margin-right: 130px;
 }
+
+.position-name {
+  font-size: 10px;
+  text-align: center;
+  font-weight: bold;
+}
