@@ -5,12 +5,12 @@
   
   <div class="players-container">
     <div class="player-card current-player">
-      <img [src]="currentPlayer.image" alt="Current Player Image" id="currentPlayerIMG" class="player-img">
-      <div class="player-info" *ngIf="currentPlayer.team">
-        <h3 class="player-name">{{ currentPlayer.preferredName }}</h3>
-        <p class="player-number">#{{ currentPlayer.kitNumber }}</p>
-        <p class="player-position">{{ currentPlayer.position }}</p>
-        <p class="player-team">{{ currentPlayer.team.teamName }}</p>
+      <img [src]="squadPlayers[currentPlayerPosition]?.image" alt="Current Player Image" id="currentPlayerIMG" class="player-img" *ngIf="squadPlayers[currentPlayerPosition]; else defaultImg">
+      <div class="player-info" *ngIf="squadPlayers[currentPlayerPosition]?.team">
+        <h3 class="player-name">{{ squadPlayers[currentPlayerPosition]?.preferredName }}</h3>
+        <p class="player-number">#{{ squadPlayers[currentPlayerPosition]?.kitNumber }}</p>
+        <p class="player-position">{{ squadPlayers[currentPlayerPosition]?.position }}</p>
+        <p class="player-team">{{ squadPlayers[currentPlayerPosition]?.team.teamName }}</p>
       </div>
     </div>
     
@@ -18,9 +18,9 @@
       <i class="fas fa-exchange-alt"></i>
     </div>
     
-    <div class="player-card new-player" *ngIf="newPlayer">
-      <img [src]="newPlayer.image" alt="New Player Image" id="newPlayerIMG" class="player-img">
-      <div class="player-info" *ngIf="newPlayer.team">
+    <div class="player-card new-player">
+      <img [src]="newPlayer.image" alt="New Player Image" id="newPlayerIMG" class="player-img" *ngIf="newPlayer; else defaultImg">
+      <div class="player-info" *ngIf="newPlayer">
         <h3 class="player-name">{{ newPlayer.preferredName }}</h3>
         <p class="player-number">#{{ newPlayer.kitNumber }}</p>
         <p class="player-position">{{ newPlayer.position }}</p>
@@ -28,9 +28,21 @@
       </div>
     </div>
   </div>
+
+  <div class="position-title"> {{ currentPositionTitle }} </div>
   
   <div class="button-container">
-    <button type="button" class="btn btn-outline-primary cancel-outline-btn" (click)="onCancel()">Cancel</button>
+    <i class="fas fa-long-arrow-alt-left" (click)="scrollLeft()"></i>
     <button type="button" class="btn btn-outline-primary swap-outline-btn" (click)="onSwap()">Swap</button>
+    <i class="fas fa-long-arrow-alt-right" (click)="scrollRight()"></i>
   </div>
+
+  <div class="return-to-squad" (click)="goToSquad()">
+    <i class="fas fa-long-arrow-alt-left"></i>
+    <div>Back to Squad</div>
+  </div>
+
+  <ng-template #defaultImg>
+    <img [src]="defaultPlayerImg" alt="Default Player Image" id="defaultPlayerIMG" class="player-img">
+  </ng-template>
 </div>
