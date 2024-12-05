@@ -63,6 +63,7 @@ export class SquadCardComponent implements OnInit {
     playerId: null,
     active: false,
     legend: false,
+    injured: false,
     image: "assets/ui-images/default-player.png",
     birthDate: "",
     joinDate: "",
