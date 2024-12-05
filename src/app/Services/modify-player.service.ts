@@ -20,6 +20,7 @@ export class ModifyPlayerService {
     playerId: null,
     active: true,
     legend: false,
+    injured: false,
     image: "assets/ui-images/default-player.png",
     birthDate: "",
     joinDate: "",

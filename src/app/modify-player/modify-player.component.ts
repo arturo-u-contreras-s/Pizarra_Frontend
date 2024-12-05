@@ -46,7 +46,7 @@ export class ModifyPlayerComponent {
 
   @Input() createPlayer: boolean;
 
-  originalPlayer: Player // version of the player stored in database. stored in case user wants to cancel changes made
+  originalPlayer: Player; // version of the player stored in database. stored in case user wants to cancel changes made
 
   currentPlayer: Player; // version of the player being edited
 

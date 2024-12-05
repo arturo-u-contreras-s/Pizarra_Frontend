@@ -1,5 +1,5 @@
 /*
-A PLAYER THAT CAN BE ADDED TO THE CLUB
+A PLAYER THAT CAN BE ADDED TO A TEAM
 */
 import { Team } from '../model/team';
 export class Player{
@@ -11,6 +11,7 @@ export class Player{
 
   active: boolean;
   legend: boolean;
+  injured: boolean;
 
   position: string;
   team: Team;

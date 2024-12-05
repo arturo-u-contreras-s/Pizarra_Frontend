@@ -35,6 +35,7 @@ export class PlayerLibraryCardComponent {
     playerId: null,
     active: false,
     legend: false,
+    injured: false,
     image: "assets/images/default-player.png",
     birthDate: "",
     joinDate: "",
